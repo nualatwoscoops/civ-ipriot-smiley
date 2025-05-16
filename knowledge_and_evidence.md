@@ -68,51 +68,56 @@ python3 main.py
 
 1. Examine the code for the `smiley.py` file and provide  an example of a variable of each of the following types and their corresponding values (`_` should be replaced with the appropriate values):
 
-   | Type                    | name       | value          |
-   | ----------              | ---------- | -------------- |
-   | built-in primitive type | _          |  _             |
-   | built-in composite type | _          |  _             |
-   | user-defined type       | _          |  _             |
+   | Type                    | name     | value           |
+   | ----------              |----------|-----------------|
+   | built-in primitive type | (dimmed) | True            |
+   | built-in composite type | WHITE    | (255, 255, 255) |
+   | user-defined type       | class    | Smiley          |
 
 2. Fill in (`_`) the following table based on the code in `smiley.py`:
 
-   | Object                   | Type                    |
-   | ------------             | ----------------------- |
-   | self.pixels              | _                       |
-   | A member of self.pixels  | _                       |
-   | self                     | _                       |
+   | Object                   | Type   |
+   | ------------             |--------|
+   | self.pixels              | list   |
+   | A member of self.pixels  | tuple  |
+   | self                     | Smiley |
 
 3. Examine the code for `smiley.py`, `sad.py`, and `happy.py`. Give an example of each of the following control structures using an example from **each** of these files. Include the first line and the line range:
 
-   | Control Flow | File       | First line  | Line range  |
-   | ------------ | ---------- | ----------- | ----------- |
-   |  sequence    |  _         | _           | _           |
-   |  selection   | _          | _           | _           |
-   |  iteration   | _          | _           | _           |
+   | Control Flow | File      | First line | Line range |
+   | ------------ |-----------|------------|------------|
+   |  sequence    | smiley.py | 15         | 15-16      |
+   |  selection   | sad.py    | 20         | 20-23      |
+   |  iteration   | sad.py    | 16         | 15-17      |
 
 4. Though everything in Python is an object, it is sometimes said to have four "primitive" types. Examining the three files `smiley.py`, `sad.py`, and `happy.py`, identify which of the following types are used in any of these files, and give an example of each (use an example from the code, if applicable, otherwise provide an example of your own):
 
-   | Type                    | Used? | Example |
-   | ----------------------- | ----- | --------|
-   | int                     | _     | _          |
-   | float                   | _     | _          |
-   | str                     | _     | _          |
-   | bool                    | _     | _          |
+   | Type                    | Used? | Example                |
+   | ----------------------- |-------|------------------------|
+   | int                     | y     | 255                    |
+   | float                   | y     | 0.25                   |
+   | str                     | n     | "Where is the string?" |
+   | bool                    | y     | dimmed = True          |
 
 5. Examining `smiley.py`, provide an example of a class variable and an instance variable (attribute). Explain **why** one is defined as a class variable and the other as an instance variable.
 
-> Your answer here
+> A class variable used is WHITE (or any of the other colours) and it has the values 255, 255, 255.
+
+
+
+It is a class variable because it belongs to the Smiley class and stores the values for a colour that will be the same for all of the Smiley objects.
+> An instance variable used is self.pixels and it shows the colours of the smiley face as a list with each item being a tuple. It is an instance variable since every Smily object will have a different self.pixel list where it can have its own colours. In this way each object can show a different image.  
 >
 
 6. Examine `happy.py`, and identify the constructor (initializer) for the `Happy` class:
    1. What is the purpose of a constructor (in general) and this one (in particular)?
-
-   > Your answer here
+    
+   > When objects are created constructors are called automatically to set up the objects attributes. In the case of the Happy class it initialises (using "__init__") the eyes and mouth and sets up the Happy smiley object so it can be displayed. (https://www.geeksforgeeks.org/constructors-in-python/)  
    >
 
    2. What statement(s) does it execute (consider the `super` call), and what is the result?
 
-   > Your answer here
+   > The super call executes __init__, and the fucntions draw_mouth and draw_eyes. init creates the object to make sure that the smiley set up is done before the eyes and mouth are drawn.
    >
 
 ### 2.3. Code style
