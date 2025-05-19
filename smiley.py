@@ -7,22 +7,25 @@ class Smiley:
     RED = (255, 0, 0)
     YELLOW = (255, 255, 0)
     BLANK = (0, 0, 0)
+    BLUE = (0, 0, 255)
 
-    def __init__(self):
+    def __init__(self, complexion):
         # We have encapsulated the SenseHat object
+        super().__init__()
+        self.my_complexion = complexion if complexion else self.YELLOW #default
         self.sense_hat = SenseHat()
 
-        Y = self.YELLOW
+        X = self.my_complexion
         O = self.BLANK
         self.pixels = [
-            O, Y, Y, Y, Y, Y, Y, O,
-            Y, Y, Y, Y, Y, Y, Y, Y,
-            Y, Y, Y, Y, Y, Y, Y, Y,
-            Y, Y, Y, Y, Y, Y, Y, Y,
-            Y, Y, Y, Y, Y, Y, Y, Y,
-            Y, Y, Y, Y, Y, Y, Y, Y,
-            Y, Y, Y, Y, Y, Y, Y, Y,
-            O, Y, Y, Y, Y, Y, Y, O,
+            O, X, X, X, X, X, X, O,
+            X, X, X, X, X, X, X, X,
+            X, X, X, X, X, X, X, X,
+            X, X, X, X, X, X, X, X,
+            X, X, X, X, X, X, X, X,
+            X, X, X, X, X, X, X, X,
+            X, X, X, X, X, X, X, X,
+            O, X, X, X, X, X, X, O,
         ]
 
     def dim_display(self, dimmed=True):
@@ -37,3 +40,11 @@ class Smiley:
         Show the smiley on the screen.
         """
         self.sense_hat.set_pixels(self.pixels)
+
+    def complexion(self):
+        """
+        Gives the colour of the smiley on the screen.
+        """
+        return self.my_complexion
+
+

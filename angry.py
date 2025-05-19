@@ -2,13 +2,13 @@ import time
 from blinkable import Blinkable
 from smiley import Smiley
 
-
-class Happy(Smiley, Blinkable):
+class Angry(Smiley, Blinkable):
     """
    Provides a Smiley with a happy expression
     """
+
     def __init__(self, complexion=None):
-        super().__init__(complexion)
+        super().__init__(complexion=Smiley.RED if complexion is None else complexion)
 
         self.draw_mouth()
         self.draw_eyes()
@@ -17,7 +17,7 @@ class Happy(Smiley, Blinkable):
         """
        Renders a mouth by blanking the pixels that form that object.
         """
-        mouth = [41, 46, 50, 51, 52, 53]
+        mouth = [41, 42, 43, 44, 45, 46]
         for pixel in mouth:
             self.pixels[pixel] = self.BLANK
 
@@ -26,14 +26,14 @@ class Happy(Smiley, Blinkable):
        Draws the eyes (open or closed) on the standard smiley.
         :param wide_open (bool): eyes open or closed.
         """
-        eyes = [10, 13, 18, 21]
+        eyes = [18, 21]
         for pixel in eyes:
-            self.pixels[pixel] = self.BLANK if wide_open else self. complexion()
+            self.pixels[pixel] = self.BLANK if wide_open else self.complexion()
 
     def blink(self, delay=0.25):
         """
        Blinks the smiley's eyes once
-        
+
         :param delay: Delay between blinks (in seconds)
         """
         self.draw_eyes(wide_open=False)

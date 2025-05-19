@@ -240,7 +240,7 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
 - Observe and document the Sad smiley as it blinks its eyes. Describe any adjustments or issues encountered during implementation.
 
-  > Your answer here
+  > One thing I would want to readjust is the position of the smiley up one row so that it isnt touching the edge of the face, making it look a bit awkward. And I would like to make the blink a loop.  
 
   ### 2.8. If It Walks Like a Duck…
 
@@ -248,11 +248,11 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
   1. **Class Type Analysis:** What kind of class is `Blinkable`? Inspect its superclass for clues about its classification.
 
-     > Your answer here
+     > Blinkable is an abstract base class/ABC since it inherits from ABC (the superclass) and has an abstract method called blink() - unlike if it the superclass was Smiley then it would inherit from Smiley. It means that objects that can blink do so in the same way using blinkable - but it doesn't actually give them the ability to themselves because it is ABC  
 
   2. **Class Implementation:** `Blinkable` is a class intended to be implemented by other classes. What generic term describes this kind of class, which is designed for implementation by others? **Clue**: Notice the lack of any concrete implementation and the naming convention.
 
-  > Your answer here
+  > Its called an abstract base class - it is meant to be a blueprint for what other classes need but it only has abstarct not concrete behaviour. (http://blog.teclado.com/python-abc-abstract-base-classes/) 
 
   3. **OO Principle Identification:** Regarding your answer to question (2), which Object-Oriented (OO) principle does this represent? Choose from the following and justify your answer in 1-2 sentences: Abstraction, Polymorphism, Inheritance, Encapsulation.
 
@@ -277,19 +277,19 @@ Include a screenshot of the sad smiley or the modified `main.py`:
   1. **Defined Colors and Their Location:**
 
      1. Which colors are defined and in which class(s)?
-        > Your answer here
+        > WHITE, GREEN, RED, YELLOW, BLANK are defined in Smiley class. 
      2. What type of variables hold these colors? Are the values expected to change during the program's execution? Explain your answer.
-        > Your answer here
+        > They use tupes of three intgers which give an RGB value of colours. Tuples are not mutable so the contents aren't expected to change. 
      3. Add the color blue to the appropriate class using the appropriate format and values.
 
   2. **Usage of Color Variables:**
 
      1. In which classes are the color variables used?
-        > Your answer here
+        > The smiley class and also Happy and sad will in herit from Smiley. 
 
   3. **Simple Method to Change Colors:**
   4. What is the easiest way you can think to change the smileys to green? Easiest, not necessarily the best!
-     > Your answer here
+     > I think change the init method and swap Yellow or While with Green. 
 
   Here's a revised version of the "Flexible Colors – Step 1" section for the smiley project, incorporating your specifications for formatting and content updates:
 
