@@ -23,7 +23,10 @@ class Sad(Smiley, Blinkable):
         """
         eyes = [10, 13, 18, 21]
         for pixel in eyes:
-            self.pixels[pixel] = self.BLANK if wide_open else self.complexion()
+            if wide_open:
+                self.pixels[pixel] = self.BLANK
+            else:
+                self.pixels[pixel] = self.complexion()
 
     def blink(self, delay=0.25):
         """

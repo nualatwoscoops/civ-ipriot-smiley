@@ -86,9 +86,9 @@ python3 main.py
 
    | Control Flow | File      | First line | Line range |
    | ------------ |-----------|------------|------------|
-   |  sequence    | smiley.py | 15         | 15-16      |
-   |  selection   | sad.py    | 20         | 20-23      |
-   |  iteration   | sad.py    | 16         | 15-17      |
+   |  sequence    | smiley.py | super().__init__()        | 11-25      |
+   |  selection   | sad.py    | if wide_open:         | 26-29      |
+   |  iteration   | sad.py    | for pixel in mouth:        | 15-17      |
 
 4. Though everything in Python is an object, it is sometimes said to have four "primitive" types. Examining the three files `smiley.py`, `sad.py`, and `happy.py`, identify which of the following types are used in any of these files, and give an example of each (use an example from the code, if applicable, otherwise provide an example of your own):
 
